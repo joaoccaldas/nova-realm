@@ -4,10 +4,10 @@
 class ElevenLabsTTS {
     constructor(config) {
         this.config = config || NovaRealmConfig;
-        this.apiKey = this.config.codexia.voiceSettings.elevenLabs.apiKey;
-        this.voiceId = this.config.codexia.voiceSettings.elevenLabs.voiceId;
-        this.model = this.config.codexia.voiceSettings.elevenLabs.model;
-        this.settings = this.config.codexia.voiceSettings.elevenLabs.settings;
+        this.apiKey = this.config.codexia?.voiceSettings?.elevenLabs?.apiKey || "";
+        this.voiceId = this.config.codexia?.voiceSettings?.elevenLabs?.voiceId || "default";
+        this.model = this.config.codexia?.voiceSettings?.elevenLabs?.model || "default";
+        this.settings = this.config.codexia?.voiceSettings?.elevenLabs?.settings || { stability: 0.5, similarityBoost: 0.5 };
         
         this.isPlaying = false;
         this.audioQueue = [];
