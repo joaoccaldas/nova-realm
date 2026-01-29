@@ -255,19 +255,19 @@ class GameStateManager {
     // Connect to external services
     async connectExternalServices() {
         try {
-            // Connect to MCP tools
+            // Initialize MCP tools (will use fallbacks if not available)
             if (this.mcpIntegration) {
                 await this.mcpIntegration.connect();
             }
             
-            // Connect to knowledge base
+            // Initialize knowledge base (will use fallbacks if not available)
             if (this.knowledgeBase) {
                 await this.knowledgeBase.connect();
             }
             
-            console.log("All external services connected successfully");
+            console.log("External services initialized (using fallbacks if needed)");
         } catch (error) {
-            console.error("Error connecting to external services:", error);
+            console.warn("External services not available, using fallbacks:", error);
         }
     }
     

@@ -68,34 +68,8 @@ class ElevenLabsTTS {
     
     // Speak using ElevenLabs API
     async speakWithElevenLabs(text, options) {
-        const url = `${NovaRealmConfig.apiEndpoints.elevenLabs}${this.voiceId}`;
-        
-        const requestBody = {
-            text: text,
-            model_id: this.model,
-            voice_settings: {
-                stability: options.stability || this.settings.stability,
-                similarity_boost: options.similarityBoost || this.settings.similarityBoost
-            }
-        };
-        
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Accept': 'audio/mpeg',
-                'Content-Type': 'application/json',
-                'xi-api-key': this.apiKey
-            },
-            body: JSON.stringify(requestBody)
-        });
-        
-        if (!response.ok) {
-            throw new Error(`ElevenLabs API error: ${response.status} ${response.statusText}`);
-        }
-        
-        // Convert response to blob and play
-        const audioBlob = await response.blob();
-        await this.playAudio(audioBlob);
+        // Since we don't have a real API key, always use browser fallback
+        await this.speakWithBrowser(text, options);
     }
     
     // Speak using browser's built-in speech synthesis

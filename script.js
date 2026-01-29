@@ -60,7 +60,7 @@ class NovaRealmGame {
         // Initialize game state manager
         await this.gameStateManager.initialize();
         
-        // Connect to external services
+        // Connect to external services (will use fallbacks if not available)
         await this.gameStateManager.connectExternalServices();
         
         this.updatePlayerInfo();
@@ -68,6 +68,9 @@ class NovaRealmGame {
         this.generateStartingPowers();
         this.createMapVisualization();
         await this.startCodexiaDialogue();
+        
+        // Update UI to indicate game is ready
+        document.getElementById('ai-status').textContent = 'Codexia is ready to assist';
     }
     
     setupEventListeners() {
@@ -220,7 +223,7 @@ class NovaRealmGame {
     }
     
     async collaborateWithAI() {
-        // Simulate collaboration with AI
+        // Simulate collaboration with AI (works independently)
         const aiSuggestions = [
             "Try breaking down the problem into smaller functions",
             "Consider using a loop for repetitive tasks",
@@ -233,10 +236,10 @@ class NovaRealmGame {
         const suggestion = aiSuggestions[Math.floor(Math.random() * aiSuggestions.length)];
         
         document.getElementById('ai-suggestions').innerHTML = `
-            <strong>AI Suggestion:</strong> ${suggestion}
+            <strong>Codexia's Suggestion:</strong> ${suggestion}
         `;
         
-        document.getElementById('ai-status').textContent = 'Providing helpful suggestion';
+        document.getElementById('ai-status').textContent = 'Codexia is helping';
         
         await this.elevenLabsTTS.speakPhrase('collaboration_suggestion', { suggestion: suggestion });
         
