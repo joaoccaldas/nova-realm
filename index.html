@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova's Realm: Collaborative Adventure Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="config.js"></script>
+</head>
+<body>
+    <div id="game-container">
+        <header>
+            <h1>Nova's Realm</h1>
+            <p>The CodeQuest Academy Adventure</p>
+        </header>
+        
+        <div id="codexia-panel">
+            <div id="codexia-avatar">
+                <img src="images/codexia.png" alt="Codexia, the AI Guide" id="codexia-img">
+            </div>
+            <div id="codexia-dialogue">
+                <p id="codexia-text">Welcome to CodeQuest Academy! I'm Codexia, your AI guide. Together we'll explore the magical world of programming!</p>
+            </div>
+        </div>
+        
+        <div id="game-world">
+            <div id="player-area">
+                <h3>Your Character</h3>
+                <div id="player-info">
+                    <p>Name: <span id="player-name">Adventurer</span></p>
+                    <p>Level: <span id="player-level">1</span></p>
+                    <p>Mana: <span id="player-mana">100</span>/100</p>
+                    <p>XP: <span id="player-xp">0</span></p>
+                </div>
+                <div id="inventory">
+                    <h4>Coding Powers</h4>
+                    <div id="powers-container">
+                        <!-- Powers will be dynamically added here -->
+                    </div>
+                </div>
+            </div>
+            
+            <div id="adventure-area">
+                <div id="map-view">
+                    <!-- Game map visualization -->
+                    <svg id="game-map" width="600" height="400">
+                        <!-- Map elements will be drawn here -->
+                    </svg>
+                </div>
+                
+                <div id="actions-panel">
+                    <h3>Available Actions</h3>
+                    <div id="action-buttons">
+                        <button id="explore-btn">Explore New Area</button>
+                        <button id="code-challenge-btn">Take Coding Challenge</button>
+                        <button id="collaborate-btn">Collaborate with AI</button>
+                        <button id="learn-btn">Learn New Power</button>
+                    </div>
+                    
+                    <div id="challenge-area" style="display:none;">
+                        <h4>Coding Challenge</h4>
+                        <div id="challenge-description"></div>
+                        <textarea id="code-input" placeholder="Write your solution here..."></textarea>
+                        <button id="submit-code-btn">Submit Solution</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div id="ai-companion">
+            <h3>AI Collaborator</h3>
+            <div id="ai-status">Ready to assist</div>
+            <div id="ai-suggestions"></div>
+        </div>
+        
+        <footer>
+            <p>Nova's Realm: Where Code Meets Magic | Created with ❤️ for collaborative learning</p>
+        </footer>
+    </div>
+    
+    <script src="game_state_manager.js"></script>
+    <script src="browser_extension_integration.js"></script>
+    <script src="elevenlabs_tts.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

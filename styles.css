@@ -1,0 +1,260 @@
+/* Nova's Realm Game Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a2a6c, #b21f1f, #1a2a6c);
+    color: #fff;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+#game-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(0, 0, 30, 0.8);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 30px rgba(0, 200, 255, 0.5);
+    border: 2px solid #00aaff;
+}
+
+header {
+    background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #00aaff;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    color: #00eeff;
+    text-shadow: 0 0 10px rgba(0, 238, 255, 0.7);
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #aaffff;
+}
+
+#codexia-panel {
+    display: flex;
+    padding: 20px;
+    background: rgba(10, 20, 40, 0.7);
+    border-bottom: 1px solid #00aaff;
+    align-items: center;
+}
+
+#codexia-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #00c6ff, #0072ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20px;
+    border: 3px solid #00eeff;
+    box-shadow: 0 0 15px rgba(0, 238, 255, 0.5);
+}
+
+#codexia-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+
+#codexia-dialogue {
+    flex: 1;
+    background: rgba(0, 30, 60, 0.8);
+    padding: 15px;
+    border-radius: 10px;
+    border-left: 4px solid #00eeff;
+}
+
+#codexia-text {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    color: #e0f7fa;
+}
+
+#game-world {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+#player-area {
+    background: rgba(20, 30, 60, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #00aaff;
+}
+
+#player-info {
+    margin-bottom: 20px;
+    padding: 15px;
+    background: rgba(0, 20, 40, 0.6);
+    border-radius: 8px;
+}
+
+#player-info p {
+    margin: 8px 0;
+    font-size: 1.1rem;
+}
+
+#player-info span {
+    color: #00eeff;
+    font-weight: bold;
+}
+
+#inventory {
+    margin-top: 20px;
+}
+
+#powers-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.power-item {
+    background: rgba(0, 100, 200, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    border: 1px solid #00aaff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.power-item:hover {
+    background: rgba(0, 150, 255, 0.7);
+    transform: translateY(-3px);
+}
+
+.adventure-area {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#map-view {
+    background: rgba(10, 20, 40, 0.7);
+    border-radius: 10px;
+    padding: 15px;
+    border: 1px solid #00aaff;
+    flex: 1;
+}
+
+#game-map {
+    background: #0a1429;
+    border-radius: 8px;
+    border: 1px solid #0077cc;
+    display: block;
+    margin: 0 auto;
+}
+
+#actions-panel {
+    background: rgba(20, 30, 60, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid #00aaff;
+}
+
+#action-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+button {
+    background: linear-gradient(to bottom, #00aaff, #0077cc);
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: 1px solid #00eeff;
+}
+
+button:hover {
+    background: linear-gradient(to bottom, #00eeff, #00aaff);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 238, 255, 0.4);
+}
+
+#challenge-area {
+    margin-top: 20px;
+    padding: 15px;
+    background: rgba(30, 10, 60, 0.6);
+    border-radius: 8px;
+    border: 1px solid #aa00ff;
+}
+
+#code-input {
+    width: 100%;
+    height: 150px;
+    background: #0a1429;
+    color: #e0f7fa;
+    border: 1px solid #00aaff;
+    border-radius: 5px;
+    padding: 10px;
+    font-family: monospace;
+    margin: 10px 0;
+}
+
+#ai-companion {
+    padding: 20px;
+    background: rgba(15, 30, 50, 0.8);
+    border-top: 1px solid #00aaff;
+}
+
+#ai-status {
+    color: #00eeff;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#ai-suggestions {
+    background: rgba(0, 20, 40, 0.6);
+    padding: 15px;
+    border-radius: 8px;
+    min-height: 60px;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: rgba(5, 15, 30, 0.9);
+    font-size: 0.9rem;
+    color: #aaffff;
+    border-top: 1px solid #00aaff;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #game-world {
+        grid-template-columns: 1fr;
+    }
+    
+    #codexia-panel {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    #codexia-avatar {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}

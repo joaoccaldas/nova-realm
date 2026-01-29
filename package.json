@@ -1,0 +1,35 @@
+{
+  "name": "nova-realm-collaborative-adventure",
+  "version": "1.0.0",
+  "description": "Nova's Realm: Collaborative Adventure Game - An immersive experience where human and AI players work together to explore coding concepts in the magical CodeQuest Academy",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve .",
+    "dev": "npx live-server --port=3000",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "game",
+    "adventure",
+    "coding",
+    "education",
+    "collaborative",
+    "ai",
+    "javascript",
+    "html5"
+  ],
+  "author": "CodeQuest Academy",
+  "license": "MIT",
+  "dependencies": {
+    "serve": "^14.2.0",
+    "live-server": "^1.2.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codequest-academy/nova-realm.git"
+  },
+  "bugs": {
+    "url": "https://github.com/codequest-academy/nova-realm/issues"
+  },
+  "homepage": "https://github.com/codequest-academy/nova-realm#readme"
+}
