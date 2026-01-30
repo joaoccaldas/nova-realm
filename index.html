@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nova's Realm: Collaborative Adventure Game</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="config.js"></script>
 </head>
 <body>
     <div id="game-container">
@@ -80,6 +81,8 @@
         </footer>
     </div>
     
+    <!-- Load scripts in correct order -->
+    <script src="config.js"></script>
     <script src="game_state_manager.js"></script>
     <script src="browser_extension_integration.js"></script>
     <script src="elevenlabs_tts.js"></script>

@@ -3,8 +3,25 @@
 
 class ElevenLabsTTS {
     constructor(config) {
-        this.config = config || NovaRealmConfig;
-        this.apiKey = this.config.codexia?.voiceSettings?.elevenLabs?.apiKey || "";
+        // Wait for NovaRealmConfig to be available
+        this.config = config || (typeof NovaRealmConfig !== 'undefined' ? NovaRealmConfig : null);
+        if (!this.config) {
+            // Create a minimal config if none is available
+            this.config = {
+                codexia: {
+                    voiceSettings: {
+                        elevenLabs: {
+                            apiKey: null,
+                            voiceId: "default",
+                            model: "default",
+                            settings: { stability: 0.5, similarityBoost: 0.5 }
+                        }
+                    }
+                }
+            };
+        }
+        
+        this.apiKey = this.config.codexia?.voiceSettings?.elevenLabs?.apiKey || null;
         this.voiceId = this.config.codexia?.voiceSettings?.elevenLabs?.voiceId || "default";
         this.model = this.config.codexia?.voiceSettings?.elevenLabs?.model || "default";
         this.settings = this.config.codexia?.voiceSettings?.elevenLabs?.settings || { stability: 0.5, similarityBoost: 0.5 };
@@ -15,7 +32,7 @@ class ElevenLabsTTS {
         
         // Check if API key is available
         if (!this.apiKey) {
-            console.warn("ElevenLabs API key not found. TTS will use browser fallback.");
+            console.log("ElevenLabs API key not found. TTS will use browser fallback.");
         }
     }
     

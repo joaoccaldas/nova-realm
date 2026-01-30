@@ -13,7 +13,7 @@ const NovaRealmConfig = {
         role: "AI Guide and Mentor",
         voiceSettings: {
             elevenLabs: {
-                apiKey: "", // No API key available in browser
+                apiKey: null, // No API key available in browser
                 voiceId: "codexia_voice_id", // Placeholder ID
                 model: "eleven_multilingual_v1",
                 settings: {
