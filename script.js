@@ -428,27 +428,62 @@ class NovaRealmGame {
     
     // Start Qwen login process
     startQwenLogin() {
-        // In a real implementation, this would redirect to Qwen OAuth
-        // For now, we'll simulate the process
-        
-        // Create a popup window for OAuth (in a real implementation)
+        // Create a popup window for OAuth
         const popupWidth = 600;
         const popupHeight = 700;
         const left = (window.screen.width / 2) - (popupWidth / 2);
         const top = (window.screen.height / 2) - (popupHeight / 2);
         
-        // In a real implementation, this would be the actual Qwen OAuth URL
-        const oauthUrl = `https://qwen.example/oauth/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=${encodeURIComponent(window.location.origin + '/oauth/callback')}&response_type=token&scope=read_write`;
+        // Construct the actual Qwen OAuth URL
+        const clientId = 'clawd-nova-realm-game';
+        const redirectUri = encodeURIComponent(`${window.location.origin}/callback`);
+        const responseType = 'token';
+        const scope = 'read_write';
         
-        // For demo purposes, we'll simulate a successful authentication
-        // In a real implementation, this would open the actual OAuth flow
-        this.simulateQwenLogin();
+        const oauthUrl = `https://qwen-portal.com/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&response_type=${responseType}&scope=${scope}`;
+        
+        // Open the OAuth popup
+        const popup = window.open(
+            oauthUrl,
+            'qwen_oauth',
+            `width=${popupWidth},height=${popupHeight},left=${left},top=${top}`
+        );
+        
+        if (!popup) {
+            // If popup is blocked, provide alternative
+            alert('Please allow popups for this site to complete authentication with Qwen.');
+            return;
+        }
+        
+        // Monitor the popup for successful authentication
+        const checkPopup = setInterval(() => {
+            try {
+                // Check if popup was closed by user
+                if (popup.closed) {
+                    clearInterval(checkPopup);
+                    return;
+                }
+                
+                // Check if popup has redirected to our callback URL
+                if (popup.location.href.includes('/callback')) {
+                    // Extract token from fragment (for implicit flow) or query params
+                    const tokenMatch = popup.location.hash.match(/access_token=([^&]*)/);
+                    if (tokenMatch) {
+                        const token = tokenMatch[1];
+                        this.handleQwenAuthSuccess(token);
+                        popup.close();
+                        clearInterval(checkPopup);
+                    }
+                }
+            } catch (error) {
+                // Ignore cross-origin errors until redirect happens
+            }
+        }, 1000);
     }
     
-    // Simulate Qwen login (in a real implementation, this would be actual OAuth)
-    simulateQwenLogin() {
-        // Simulate the OAuth flow with a mock token
-        this.qwenAccessToken = 'mock_qwen_token_' + Date.now();
+    // Handle successful Qwen authentication
+    handleQwenAuthSuccess(token) {
+        this.qwenAccessToken = token;
         this.qwenAuthenticated = true;
         
         // Save token to localStorage
