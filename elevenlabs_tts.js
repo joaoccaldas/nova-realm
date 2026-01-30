@@ -94,29 +94,65 @@ class ElevenLabsTTS {
     async speakWithBrowser(text, options) {
         return new Promise((resolve, reject) => {
             if ('speechSynthesis' in window) {
-                const utterance = new SpeechSynthesisUtterance(text);
+                // Wait for voices to be loaded (they may not be available immediately)
+                let voices = speechSynthesis.getVoices();
                 
-                // Configure voice settings
-                utterance.rate = options.rate || 1.0;
-                utterance.pitch = options.pitch || 1.0;
-                utterance.volume = options.volume || 1.0;
-                
-                // Find Codexia-like voice if possible
-                const voices = speechSynthesis.getVoices();
-                const codexiaVoice = voices.find(voice => 
-                    voice.name.toLowerCase().includes('female') || 
-                    voice.name.toLowerCase().includes('nova') ||
-                    voice.lang.startsWith('en')
-                ) || voices[0]; // fallback to default
-                
-                if (codexiaVoice) {
-                    utterance.voice = codexiaVoice;
+                if (voices.length === 0) {
+                    // If no voices are loaded yet, wait for the voiceschanged event
+                    const loadVoices = () => {
+                        voices = speechSynthesis.getVoices();
+                        if (voices.length > 0) {
+                            speakInternal();
+                        } else {
+                            setTimeout(loadVoices, 100);
+                        }
+                    };
+                    loadVoices();
+                } else {
+                    speakInternal();
                 }
                 
-                utterance.onend = () => resolve();
-                utterance.onerror = (event) => reject(event.error);
-                
-                speechSynthesis.speak(utterance);
+                function speakInternal() {
+                    try {
+                        const utterance = new SpeechSynthesisUtterance(text);
+                        
+                        // Configure voice settings
+                        utterance.rate = options.rate || 1.0;
+                        utterance.pitch = options.pitch || 1.0;
+                        utterance.volume = options.volume || 1.0;
+                        
+                        // Find Codexia-like voice if possible
+                        const codexiaVoice = voices.find(voice => 
+                            voice.name.toLowerCase().includes('female') || 
+                            voice.name.toLowerCase().includes('nova') ||
+                            voice.lang.startsWith('en')
+                        ) || voices[0]; // fallback to default
+                        
+                        if (codexiaVoice) {
+                            utterance.voice = codexiaVoice;
+                        }
+                        
+                        utterance.onend = () => resolve();
+                        utterance.onerror = (event) => {
+                            console.warn("Speech synthesis error:", event);
+                            resolve(); // Resolve anyway to prevent blocking
+                        };
+                        utterance.onboundary = (event) => {
+                            // Optional: handle boundary events
+                        };
+                        
+                        // Check if speech synthesis is permitted before speaking
+                        if (speechSynthesis.speaking) {
+                            // If something is already speaking, cancel it
+                            speechSynthesis.cancel();
+                        }
+                        
+                        speechSynthesis.speak(utterance);
+                    } catch (error) {
+                        console.warn("Error in speech synthesis:", error);
+                        resolve(); // Resolve to prevent blocking
+                    }
+                }
             } else {
                 console.warn("Browser speech synthesis not supported");
                 // If speech synthesis isn't available, just resolve immediately
