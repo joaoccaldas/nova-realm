@@ -102,3 +102,6 @@ const NovaRealmConfig = {
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = NovaRealmConfig;
 }
+
+// Ensure NovaRealmConfig is globally available for browser
+window.NovaRealmConfig = NovaRealmConfig;

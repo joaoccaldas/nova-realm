@@ -4,7 +4,8 @@
 class ElevenLabsTTS {
     constructor(config) {
         // Wait for NovaRealmConfig to be available
-        this.config = config || (typeof NovaRealmConfig !== 'undefined' ? NovaRealmConfig : null);
+        this.config = config || (typeof NovaRealmConfig !== 'undefined' ? NovaRealmConfig : 
+                                typeof window !== 'undefined' && window.NovaRealmConfig ? window.NovaRealmConfig : null);
         if (!this.config) {
             // Create a minimal config if none is available
             this.config = {
