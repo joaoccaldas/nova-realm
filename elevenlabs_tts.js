@@ -86,7 +86,8 @@ class ElevenLabsTTS {
     
     // Speak using ElevenLabs API
     async speakWithElevenLabs(text, options) {
-        // Since we don't have a real API key, always use browser fallback
+        // Since we don't have an API key, always use browser fallback
+        console.log("No ElevenLabs API key available, using browser speech synthesis");
         await this.speakWithBrowser(text, options);
     }
     

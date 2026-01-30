@@ -92,9 +92,9 @@ const NovaRealmConfig = {
     },
     
     apiEndpoints: {
-        elevenLabs: "https://api.elevenlabs.io/v1/text-to-speech/",
-        knowledgeBase: "/api/knowledge",
-        gameState: "/api/gamestate"
+        elevenLabs: "https://api.elevenlabs.io/v1/text-to-speech/",  // Will not be used without API key
+        knowledgeBase: "/api/knowledge",  // Local endpoint, not used in browser version
+        gameState: "/api/gamestate"       // Local endpoint, not used in browser version
     }
 };
 
