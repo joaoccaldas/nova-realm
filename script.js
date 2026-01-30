@@ -52,6 +52,8 @@ class NovaRealmGame {
         
         this.currentChallenge = null;
         this.currentArea = 'academy_commons';
+        this.qwenAuthenticated = false;
+        this.qwenAccessToken = null;
         
         this.initializeGame();
     }
@@ -68,6 +70,9 @@ class NovaRealmGame {
         this.generateStartingPowers();
         this.createMapVisualization();
         await this.startCodexiaDialogue();
+        
+        // Initialize Qwen OAuth functionality
+        this.initQwenOAuth();
         
         // Update UI to indicate game is ready
         document.getElementById('ai-status').textContent = 'Codexia is ready to assist';
@@ -223,7 +228,12 @@ class NovaRealmGame {
     }
     
     async collaborateWithAI() {
-        // Simulate collaboration with AI (works independently)
+        // Use enhanced collaboration if Qwen is authenticated
+        if (this.qwenAuthenticated && this.qwenAccessToken) {
+            return await this.simulateEnhancedCollaboration();
+        }
+        
+        // Otherwise, use basic collaboration (works independently)
         const aiSuggestions = [
             "Try breaking down the problem into smaller functions",
             "Consider using a loop for repetitive tasks",
@@ -393,6 +403,148 @@ class NovaRealmGame {
         setTimeout(async () => {
             await this.elevenLabsTTS.speakPhrase('welcome');
         }, 1000);
+    }
+    
+    // Qwen OAuth functionality
+    initQwenOAuth() {
+        // Check if user is already authenticated
+        const savedToken = localStorage.getItem('qwen_access_token');
+        if (savedToken) {
+            this.qwenAccessToken = savedToken;
+            this.qwenAuthenticated = true;
+            this.updateAuthUI();
+        }
+        
+        // Set up login button
+        document.getElementById('qwen-login-btn').addEventListener('click', () => {
+            this.startQwenLogin();
+        });
+        
+        // Set up logout button
+        document.getElementById('qwen-logout-btn').addEventListener('click', () => {
+            this.logoutFromQwen();
+        });
+    }
+    
+    // Start Qwen login process
+    startQwenLogin() {
+        // In a real implementation, this would redirect to Qwen OAuth
+        // For now, we'll simulate the process
+        
+        // Create a popup window for OAuth (in a real implementation)
+        const popupWidth = 600;
+        const popupHeight = 700;
+        const left = (window.screen.width / 2) - (popupWidth / 2);
+        const top = (window.screen.height / 2) - (popupHeight / 2);
+        
+        // In a real implementation, this would be the actual Qwen OAuth URL
+        const oauthUrl = `https://qwen.example/oauth/authorize?client_id=YOUR_CLIENT_ID&redirect_uri=${encodeURIComponent(window.location.origin + '/oauth/callback')}&response_type=token&scope=read_write`;
+        
+        // For demo purposes, we'll simulate a successful authentication
+        // In a real implementation, this would open the actual OAuth flow
+        this.simulateQwenLogin();
+    }
+    
+    // Simulate Qwen login (in a real implementation, this would be actual OAuth)
+    simulateQwenLogin() {
+        // Simulate the OAuth flow with a mock token
+        this.qwenAccessToken = 'mock_qwen_token_' + Date.now();
+        this.qwenAuthenticated = true;
+        
+        // Save token to localStorage
+        localStorage.setItem('qwen_access_token', this.qwenAccessToken);
+        
+        // Update UI
+        this.updateAuthUI();
+        
+        // Update Codexia's dialogue to reflect enhanced capabilities
+        this.codexiaSay("Great! You've connected your Qwen account. I now have access to enhanced AI capabilities to better assist you in your coding adventures!");
+    }
+    
+    // Logout from Qwen
+    logoutFromQwen() {
+        this.qwenAccessToken = null;
+        this.qwenAuthenticated = false;
+        
+        // Remove token from localStorage
+        localStorage.removeItem('qwen_access_token');
+        
+        // Update UI
+        this.updateAuthUI();
+        
+        // Update Codexia's dialogue
+        this.codexiaSay("You've disconnected your Qwen account. I'm still here to help with my basic capabilities!");
+    }
+    
+    // Update authentication UI
+    updateAuthUI() {
+        const authStatus = document.getElementById('auth-status');
+        const loginBtn = document.getElementById('qwen-login-btn');
+        const logoutBtn = document.getElementById('qwen-logout-btn');
+        
+        if (this.qwenAuthenticated) {
+            authStatus.textContent = 'Connected to Qwen';
+            authStatus.style.color = '#4CAF50';
+            loginBtn.style.display = 'none';
+            logoutBtn.style.display = 'inline-block';
+        } else {
+            authStatus.textContent = 'Not authenticated';
+            authStatus.style.color = '#999';
+            loginBtn.style.display = 'inline-block';
+            logoutBtn.style.display = 'none';
+        }
+    }
+    
+    // Enhanced AI collaboration when Qwen is authenticated
+    async enhancedCollaborateWithAI() {
+        if (this.qwenAuthenticated && this.qwenAccessToken) {
+            // In a real implementation, this would call the Qwen API
+            // For now, we'll simulate enhanced responses
+            return await this.simulateEnhancedCollaboration();
+        } else {
+            // Use basic collaboration
+            return await this.collaborateWithAI();
+        }
+    }
+    
+    // Simulate enhanced collaboration with Qwen
+    async simulateEnhancedCollaboration() {
+        // Enhanced AI suggestions when Qwen is connected
+        const enhancedSuggestions = [
+            "Based on advanced analysis, I recommend refactoring this function to improve performance by 40%",
+            "I've identified a potential memory leak in your code. Let me show you the optimized version",
+            "According to best practices, you should implement error handling here with try-catch blocks",
+            "I can see an opportunity to optimize this algorithm from O(n²) to O(n log n)",
+            "For better maintainability, consider breaking this monolithic function into smaller, focused modules",
+            "I suggest using memoization here to cache expensive computations and improve performance"
+        ];
+        
+        const suggestion = enhancedSuggestions[Math.floor(Math.random() * enhancedSuggestions.length)];
+        
+        document.getElementById('ai-suggestions').innerHTML = `
+            <strong>Enhanced AI Suggestion:</strong> ${suggestion}
+        `;
+        
+        document.getElementById('ai-status').textContent = 'Enhanced assistance from Qwen';
+        
+        await this.elevenLabsTTS.speakPhrase('collaboration_suggestion', { suggestion: suggestion });
+        
+        // Record the collaboration event
+        this.gameStateManager.recordEvent('enhanced_collaboration_session', {
+            type: 'enhanced_suggestion_given',
+            suggestion: suggestion,
+            timestamp: new Date(),
+            enhanced: true
+        });
+        
+        // Start a collaborative session
+        this.gameStateManager.startCollaborativeSession(
+            ['human-player', 'codexia'], 
+            'Advanced coding assistance'
+        );
+        
+        // Gain more XP for enhanced collaboration
+        this.gainXP(10);
     }
 }
 
