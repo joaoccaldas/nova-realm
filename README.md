@@ -28,3 +28,7 @@ The game is set in a magical academy where coding concepts become powers:
 ## Getting Started
 
 To run the game locally, simply open index.html in your browser.
+
+## No API Keys Required
+
+This game runs completely in the browser with no external dependencies. No LLM API keys, ElevenLabs API keys, or other service credentials are required to play. All AI features are simulated within the game for a complete standalone experience.
