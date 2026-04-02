@@ -408,7 +408,7 @@ class NovaRealmGame {
     // Qwen OAuth functionality
     initQwenOAuth() {
         // Check if user is already authenticated
-        const savedToken = localStorage.getItem('qwen_access_token');
+        const savedToken = sessionStorage.getItem('qwen_access_token');
         if (savedToken) {
             this.qwenAccessToken = savedToken;
             this.qwenAuthenticated = true;
@@ -487,7 +487,7 @@ class NovaRealmGame {
         this.qwenAuthenticated = true;
         
         // Save token to localStorage
-        localStorage.setItem('qwen_access_token', this.qwenAccessToken);
+        sessionStorage.setItem('qwen_access_token', this.qwenAccessToken);
         
         // Update UI
         this.updateAuthUI();
@@ -502,7 +502,7 @@ class NovaRealmGame {
         this.qwenAuthenticated = false;
         
         // Remove token from localStorage
-        localStorage.removeItem('qwen_access_token');
+        sessionStorage.removeItem('qwen_access_token');
         
         // Update UI
         this.updateAuthUI();
