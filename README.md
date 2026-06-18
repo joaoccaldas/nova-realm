@@ -1,34 +1,17 @@
-# Nova's Realm: Collaborative Adventure Game
-
-Welcome to Nova's Realm, an immersive collaborative adventure game where human and AI players work together to explore, build, and solve coding challenges in the mystical CodeQuest Academy.
-
-## Game Overview
-
-In Nova's Realm, players enter the magical CodeQuest Academy where programming concepts come to life as powerful abilities. As students of this academy, both human and AI players collaborate to navigate through coding challenges, build solutions together, and explore the vast digital realm.
-
-## Core Features
-
-- **Dual Player System**: Seamlessly blend human creativity with AI intelligence
-- **Coding Powers**: Programming concepts manifest as magical abilities
-- **Collaborative Building**: Teams work together to solve complex challenges
-- **Browser Visualization**: Rich visual representation of the game world
-- **Codexia's Guidance**: AI mentor with ElevenLabs voice synthesis
-- **Knowledge Integration**: MCP tools for dynamic game mechanics
-
-## Theme: CodeQuest Academy
-
-The game is set in a magical academy where coding concepts become powers:
-- **Loops** create protective barriers that repeat
-- **Functions** summon magical creatures that perform specific tasks
-- **Variables** store mana and resources
-- **Conditional Statements** unlock secret paths based on choices
-- **Data Structures** form the architecture of the game world
-- **Algorithms** power advanced spells and abilities
-
-## Getting Started
-
-To run the game locally, simply open index.html in your browser.
-
-## No API Keys Required
-
-This game runs completely in the browser with no external dependencies. No LLM API keys, ElevenLabs API keys, or other service credentials are required to play. All AI features are simulated within the game for a complete standalone experience.
+IyBOb3ZhJ3MgUmVhbG0KCioqQ29sbGFib3JhdGl2ZSBBZHZlbnR1cmUgR2Ft
+ZSoqCgpBbiBpbW1lcnNpdmUgY29sbGFib3JhdGl2ZSBhZHZlbnR1cmUgZ2Ft
+ZSB3aGVyZSBodW1hbiBhbmQgQUkgcGxheWVycyB3b3JrIHRvZ2V0aGVyIHRv
+IGV4cGxvcmUsIGJ1aWxkLCBhbmQgc29sdmUgY29kaW5nIGNoYWxsZW5nZXMgaW4g
+dGhlIG15c3RpY2FsIENvZGVRdWVzdCBBY2FkZW15LgoKIyMgQ29yZSBGZWF0
+dXJlcwotIER1YWwgUGxheWVyIFN5c3RlbTogU2VhbWxlc3NseSBibGVuZCBo
+dW1hbiBjcmVhdGl2aXR5IHdpdGggQUkgaW50ZWxsaWdlbmNlCi0gQ29kaW5n
+IFBvd2VyczogUHJvZ3JhbW1pbmcgY29uY2VwdHMgbWFuaWZlc3QgYXMgbWFn
+aWNhbCBhYmlsaXRpZXMKLSBDb2xsYWJvcmF0aXZlIEJ1aWxkaW5nOiBUZWFt
+cyB3b3JrIHRvZ2V0aGVyIHRvIHNvbHZlIGNvbXBsZXggY2hhbGxlbmdlcwot
+IEJyb3dzZXIgVmlzdWFsaXphdGlvbjogUmljaCB2aXN1YWwgcmVwcHJlc2Vu
+dGF0aW9uIG9mIHRoZSBnYW1lIHdvcmxkCi0gQ29kZXhpYSdzIEd1aWRhbmNl
+OiBBSSBtZW50b3Igd2l0aCBFbGV2ZW5MYWJzIHZvaWNlIHN5bnRoZXNpcwot
+IEtub3dsZWRnZSBJbnRlZ3JhdGlvbjogTUNQIHRvb2xzIGZvciBkeW5hbWlj
+IGdhbWUgbWVjaGFuaWNzCgojIyBTdGF0dXMKQ29tcGxldGUuIEJ1aWx0IGFz
+IGEgY29sbGFib3JhdGl2ZSBBSSBnYW1pbmcgZXhwZXJpbWVudC4KCioiQnVpbHQg
+YnkgSm/Do28gQ2FsZGFzIHwgam9hb2NjYWxkYXNAZ21haWwuY29tIio=
