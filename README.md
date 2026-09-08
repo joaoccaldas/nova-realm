@@ -1,17 +1,20 @@
-IyBOb3ZhJ3MgUmVhbG0KCioqQ29sbGFib3JhdGl2ZSBBZHZlbnR1cmUgR2Ft
-ZSoqCgpBbiBpbW1lcnNpdmUgY29sbGFib3JhdGl2ZSBhZHZlbnR1cmUgZ2Ft
-ZSB3aGVyZSBodW1hbiBhbmQgQUkgcGxheWVycyB3b3JrIHRvZ2V0aGVyIHRv
-IGV4cGxvcmUsIGJ1aWxkLCBhbmQgc29sdmUgY29kaW5nIGNoYWxsZW5nZXMgaW4g
-dGhlIG15c3RpY2FsIENvZGVRdWVzdCBBY2FkZW15LgoKIyMgQ29yZSBGZWF0
-dXJlcwotIER1YWwgUGxheWVyIFN5c3RlbTogU2VhbWxlc3NseSBibGVuZCBo
-dW1hbiBjcmVhdGl2aXR5IHdpdGggQUkgaW50ZWxsaWdlbmNlCi0gQ29kaW5n
-IFBvd2VyczogUHJvZ3JhbW1pbmcgY29uY2VwdHMgbWFuaWZlc3QgYXMgbWFn
-aWNhbCBhYmlsaXRpZXMKLSBDb2xsYWJvcmF0aXZlIEJ1aWxkaW5nOiBUZWFt
-cyB3b3JrIHRvZ2V0aGVyIHRvIHNvbHZlIGNvbXBsZXggY2hhbGxlbmdlcwot
-IEJyb3dzZXIgVmlzdWFsaXphdGlvbjogUmljaCB2aXN1YWwgcmVwcHJlc2Vu
-dGF0aW9uIG9mIHRoZSBnYW1lIHdvcmxkCi0gQ29kZXhpYSdzIEd1aWRhbmNl
-OiBBSSBtZW50b3Igd2l0aCBFbGV2ZW5MYWJzIHZvaWNlIHN5bnRoZXNpcwot
-IEtub3dsZWRnZSBJbnRlZ3JhdGlvbjogTUNQIHRvb2xzIGZvciBkeW5hbWlj
-IGdhbWUgbWVjaGFuaWNzCgojIyBTdGF0dXMKQ29tcGxldGUuIEJ1aWx0IGFz
-IGEgY29sbGFib3JhdGl2ZSBBSSBnYW1pbmcgZXhwZXJpbWVudC4KCioiQnVpbHQg
-YnkgSm/Do28gQ2FsZGFzIHwgam9hb2NjYWxkYXNAZ21haWwuY29tIio=
+# Nova's Realm
+
+**Collaborative adventure game where human and AI players explore, build, and solve coding challenges together** in the mystical CodeQuest Academy.
+
+## Core features
+
+- **Dual-player system** — human creativity paired with an AI companion
+- **Coding powers** — programming concepts manifest as in-game abilities
+- **Collaborative building** — teams solve challenges together
+- **Browser visualization** — a rich visual representation of the game world
+- **Codexia's guidance** — an AI mentor with ElevenLabs voice synthesis
+- **Knowledge integration** — MCP tools drive dynamic game mechanics
+
+## Status
+
+Complete — an experiment in collaborative human + AI gameplay.
+
+---
+
+Built by [João Caldas](https://github.com/joaoccaldas).
