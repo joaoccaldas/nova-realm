@@ -1,17 +1,25 @@
-IyBOb3ZhJ3MgUmVhbG0KCioqQ29sbGFib3JhdGl2ZSBBZHZlbnR1cmUgR2Ft
-ZSoqCgpBbiBpbW1lcnNpdmUgY29sbGFib3JhdGl2ZSBhZHZlbnR1cmUgZ2Ft
-ZSB3aGVyZSBodW1hbiBhbmQgQUkgcGxheWVycyB3b3JrIHRvZ2V0aGVyIHRv
-IGV4cGxvcmUsIGJ1aWxkLCBhbmQgc29sdmUgY29kaW5nIGNoYWxsZW5nZXMgaW4g
-dGhlIG15c3RpY2FsIENvZGVRdWVzdCBBY2FkZW15LgoKIyMgQ29yZSBGZWF0
-dXJlcwotIER1YWwgUGxheWVyIFN5c3RlbTogU2VhbWxlc3NseSBibGVuZCBo
-dW1hbiBjcmVhdGl2aXR5IHdpdGggQUkgaW50ZWxsaWdlbmNlCi0gQ29kaW5n
-IFBvd2VyczogUHJvZ3JhbW1pbmcgY29uY2VwdHMgbWFuaWZlc3QgYXMgbWFn
-aWNhbCBhYmlsaXRpZXMKLSBDb2xsYWJvcmF0aXZlIEJ1aWxkaW5nOiBUZWFt
-cyB3b3JrIHRvZ2V0aGVyIHRvIHNvbHZlIGNvbXBsZXggY2hhbGxlbmdlcwot
-IEJyb3dzZXIgVmlzdWFsaXphdGlvbjogUmljaCB2aXN1YWwgcmVwcHJlc2Vu
-dGF0aW9uIG9mIHRoZSBnYW1lIHdvcmxkCi0gQ29kZXhpYSdzIEd1aWRhbmNl
-OiBBSSBtZW50b3Igd2l0aCBFbGV2ZW5MYWJzIHZvaWNlIHN5bnRoZXNpcwot
-IEtub3dsZWRnZSBJbnRlZ3JhdGlvbjogTUNQIHRvb2xzIGZvciBkeW5hbWlj
-IGdhbWUgbWVjaGFuaWNzCgojIyBTdGF0dXMKQ29tcGxldGUuIEJ1aWx0IGFz
-IGEgY29sbGFib3JhdGl2ZSBBSSBnYW1pbmcgZXhwZXJpbWVudC4KCioiQnVpbHQg
-YnkgSm/Do28gQ2FsZGFzIHwgam9hb2NjYWxkYXNAZ21haWwuY29tIio=
+# Nova's Realm
+
+**Collaborative Adventure Game**
+
+An immersive collaborative adventure game where human and AI players work together to explore, build, and solve coding challenges in the mystical CodeQuest Academy.
+
+## Core Features
+- Dual Player System: Seamlessly blend human creativity with AI intelligence
+- Coding Powers: Programming concepts manifest as magical abilities
+- Collaborative Building: Teams work together to solve complex challenges
+- Browser Visualization: Rich visual reppresentation of the game world
+- Codexia's Guidance: AI mentor with ElevenLabs voice synthesis
+- Knowledge Integration: MCP tools for dynamic game mechanics
+
+## Status
+Complete. Built as a collaborative AI gaming experiment.
+
+*"Built by João Caldas | joaoccaldas@gmail.com"*
+
+## Project context
+
+This is a personal, self-directed learning project by João Caldas. I learn by building real projects, comparing approaches, debugging failures, and documenting what I discover.
+
+AI tools are used extensively during research, design, coding, debugging, testing, and documentation as part of that learning process. AI-generated suggestions are treated as inputs to review, not proof of correctness. Important behavior, claims, security boundaries, and data handling should be tested and documented.
+
