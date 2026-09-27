@@ -6,7 +6,8 @@
   "scripts": {
     "start": "npx serve .",
     "dev": "npx live-server --port=3000",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run check",
+    "check": "node --check browser_extension_integration.js && node --check config.js && node --check create_codexia_image.js && node --check elevenlabs_tts.js && node --check game_state_manager.js && node --check script.js"
   },
   "keywords": [
     "game",
@@ -18,7 +19,7 @@
     "javascript",
     "html5"
   ],
-  "author": "CodeQuest Academy",
+  "author": "João Caldas",
   "license": "MIT",
   "dependencies": {
     "serve": "^14.2.0",
@@ -26,10 +27,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/codequest-academy/nova-realm.git"
+    "url": "https://github.com/joaoccaldas/nova-realm.git"
   },
   "bugs": {
-    "url": "https://github.com/codequest-academy/nova-realm/issues"
+    "url": "https://github.com/joaoccaldas/nova-realm/issues"
   },
-  "homepage": "https://github.com/codequest-academy/nova-realm#readme"
+  "homepage": "https://github.com/joaoccaldas/nova-realm#readme"
 }
