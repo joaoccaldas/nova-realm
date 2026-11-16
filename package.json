@@ -21,7 +21,7 @@
   "author": "CodeQuest Academy",
   "license": "MIT",
   "dependencies": {
-    "serve": "^14.2.0",
+    "serve": "^14.2.7",
     "live-server": "^1.2.2"
   },
   "repository": {
